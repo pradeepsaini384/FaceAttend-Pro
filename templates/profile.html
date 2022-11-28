@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- Creadted by Coding Pakistan Youtube Channel -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Welcome To Your Profile</title>
+    <link rel="stylesheet" href="/static/profile_css/style.css">
+</head>
+
+<body>
+
+
+    <div class="hero">
+        <nav>
+            <h2 class="logo">Attendance</h2>
+            <ul>
+                <li> <a href="#"> Home </a></li>
+                <li> <a href="#"> Features </a></li>
+                <li> <a href="#"> About </a></li>
+                <li> <a href="#"> Contact </a></li>
+            </ul>
+            <img src="/static/images/images/user.jpeg" class="user-pic" onclick="toggleMenu()">
+
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="/static/images/images/user.jpeg">
+                        <div>
+                            <h3> {{email}} </h3>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <a href="/add" methods="POST" class="sub-menu-link">
+                        <img src="/static/images/images/profile.png">
+                        <p>Add Your Face Data</p>
+                        <span> > </span>
+
+                    </a>
+                    <div class="innerside">
+                        <p>{{error}}</p>
+                    </div>
+                    <a href="#" class="sub-menu-link">
+                        <img src="/static/images/images/setting.png">
+                        <p>Settings and Privacy</p>
+                        <span> > </span>
+                    </a>
+
+                    <a href="#" class="sub-menu-link">
+                        <img src="/static/images/images/help.png">
+                        <p>Help & Support</p>
+                        <span> > </span>
+                    </a>
+
+                    <a href="/" methods="POST" class="sub-menu-link">
+                        <!-- <div action='/logout' method= "post"> -->
+                        <img src="/static/images/images/logout.png">
+                        <p>Logout</p>
+                        <span> > </span>
+                        <!-- </div> -->
+                    </a>
+
+                </div>
+            </div>
+
+        </nav>
+        <div class="row text-center" style="padding: 20px;margin: 20px;">
+            <div class="col"
+                style="border-radius: 20px;padding: 0px;background-color:rgb(211,211,211,0.5);margin:0px 10px 10px 10px;min-height: 400px;">
+                <h2 style="border-radius: 20px 20px 0px 0px;background-color: #0b4c61;color: white;padding: 10px;">Today's
+                    Attendance <i class="material-icons">assignment</i></h2>
+            <table  style="background-color: white;">
+            <form action='/start' method="POST" enctype="multipart/form-data">
+                {%if livedata %}
+                {% for i in livedata %}
+                    <tr>
+                        <td>{{i[0]}}</td>
+                        <td>{{i[1]}}</td>
+                        <td>{{i[2]}}</td>
+                        <td><button type="submit">Give Attendance></button></td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+            </form>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu() {
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+}
+h1, p{
+    text-align: center;
+}
+/* font family is added */
+body {
+    background-image: url('https://cutewallpaper.org/21/1920-x-1080-gif/1920x1080-Wallpapercartoon-Wallpapers-Driverlayer-Search-.gif');
+    background-size: cover;
+    margin-top: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    background-color: #FFF;
+    margin: 0;
+    padding: 2.25em;
+    box-sizing: border-box;
+    border: solid 1px #DDD;
+    border-radius: .5em;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  .container {
+    
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+  }
+  
+  h1, p {
+    text-align: center;
+  }
+  
+  /* desired spacing for input fields */
+  input {
+    margin: 0.25em 0em 1em 0em;
+  }
+/* more styles added to beautify the input fields */
+input {
+    margin: 0.25em 0em 1em 0em;
+    outline: none;
+    padding: 0.5em;
+    border: none;
+    background-color: rgb(225, 225, 225);
+    border-radius: 0.25em;
+    color: black;
+  }
+/* styles for button */
+button {
+    padding: 0.75em;
+    border: none;
+    outline: none;
+    background-color: rgb(68, 18, 232);
+    color: white;
+    border-radius: 0.25em;
+  }
+  
+  /* hover functionality for button */
+  button:hover {
+    cursor: pointer;
+    background-color: rgb(41, 4, 164);
+  }
+      

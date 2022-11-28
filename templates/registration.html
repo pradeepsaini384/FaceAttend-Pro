@@ -1,0 +1,91 @@
+<!-- <!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  adityabhavikatti</title>
+  
+  
+  
+      <link rel="stylesheet" href="/static/css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Animated SVG Avatar</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+
+      <link rel="stylesheet" href="/static/css/style.css">
+
+
+</head>
+
+<body>
+
+
+  <form  action='/validation' method= "post">
+    <div>
+        <h1>Welcome to Pradeep's Attendence </h1>
+    </div> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <!--Change the text to "Register"-->
+    <link rel="stylesheet" href="/static/css1/style.css">
+</head>
+
+<body>
+    <form  action='/registration' method= "post">
+        <!-- class named "container" is assigned to div -->
+        <div class="container">
+            {%if error %}
+            <p style="color: green;"> <strong>{{error}}</strong></p>
+            {% endif %}
+            <h1>Registration Form </h1>
+            
+            <p>Kindly fill in this form to register.</p>
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name" id="name" required />
+            
+            <label for="rollno"><b>Roll NO</b></label>
+            <input type="text" placeholder="Enter Your Roll Number" name="rollno" id="rollno" required />
+
+            
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required />
+
+            <label for="pwd"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="pwd" id="pwd" required />
+
+            <label for="pwd-repeat"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="pwd-repeat" id="pwd-repeat" required />
+
+            <button type="submit">Register</button>
+        </div>
+
+        <div>
+            <p>Already have an account? <a href="/">Log in</a>.</p>
+        </div>
+    </form>
+
+    <script src="/static/js1/index.js"></script>
+
+</body>
+
+</html>
