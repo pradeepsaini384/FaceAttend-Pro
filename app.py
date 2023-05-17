@@ -24,8 +24,8 @@ app = Flask(__name__)
 
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'mca22.pradeep.saini@sunstone.edu.in' # replace with your email address
-app.config['MAIL_PASSWORD'] = 'sunstone304785' # replace with your email password
+app.config['MAIL_USERNAME'] = '' # replace with your email address
+app.config['MAIL_PASSWORD'] = '' # replace with your email password
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
