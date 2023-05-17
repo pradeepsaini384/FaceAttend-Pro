@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Penal</title>
+    <link rel="stylesheet" href="/static/css/home1.css">
+</head>
+
+<body>
+    <div class="blue">
+        <div class="topnav" id="myTopnav">
+            <!-- <img src="/static/images/hacker.png" class="user-pic" onclick="toggleMenu()"> -->
+            <h3>FaceAttend Pro Admin</h3>
+            <a id="check" href="#home">Home</a>
+            <a id="output4" herf="#output">face data</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                &#9776;
+                <i class="fa fa-home"></i>
+            </a>
+        </div>
+        <div class="row1">
+            <div class="div2">
+                <h1>
+                    Attendance Generation
+                </h1>
+                <ul style="padding-left: 20xp; list-style: none;">
+                    <li>
+                        <!-- <span class="checkbox"></span> -->
+                        <p>-  Instance Update</p>
+                    </li>
+                    <li>
+                        <!-- <span class="checkbox"></span> -->
+                        <p>-  Esay editing</p>
+                    </li>
+                    <li>
+                        <!-- <span class="checkbox"></span> -->
+                        <p>-  Automatic Calculation </p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="realtimeimg">
+            <img src="/static/images/img2.svg" height="500px" width="500px">
+        </div>
+
+
+    </div>
+    <div>
+        <img src="/static/images/info.png" alt="">
+    </div>
+    <div id="div1">
+
+        <h2 id="h2-1">Generate Your Attendance Assignment </h2>
+        <div id="div1-1">
+
+            <form action='/live' method="POST">
+                <select name="csub" id="csub">
+                    <option value="DataBase Management">DataBase Management</option>
+                    <option value="Python">Python</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Java">Java</option>
+                </select>
+                <!-- <input type="hidden" value="{{email}}" name="email" id="email" required /> -->
+                <input type="datetime-local" name="deadline" id="deadline" required placeholder="Deadline" />
+
+
+                <input type="hidden" checked="true" name="checked" id="checked" />
+
+                <button id="btn1" type="submit">Generate</button>
+
+            </form>
+
+        </div>
+    </div>
+    <table id="livedata">
+
+        {%if livedata %}
+        <caption>Live Published Attendance</caption>
+        <tr>
+            <th>Date</th>
+            <th>Subject Name</th>
+            <th>View Attendance</th>
+        </tr>
+        {% for i in livedata %}
+
+        <tr>
+            <td>{{i[0]}}</td>
+            <td>{{i[1]}}</td>
+            <td><button onclick="window.location.href='#std1'">View Attendance</button></td>
+
+        </tr>
+
+
+        {% endfor %}
+        {% endif %}
+    </table>
+    {% if ok%}
+    <div class="std1" id="std1">
+        <table>
+            <caption>Today's Attendance Data</caption>
+            <tr>
+                <td><b>S No</b></td>
+                <td><b>Name</b></td>
+                <td><b>ID</b></td>
+                <td><b>Time</b></td>
+            </tr>
+            {% if l %}
+
+            {% for i in range(l) %}
+            <tr>
+                <td>{{ i+1 }}</td>
+                <td>{{ names[i] }}</td>
+                <td>{{ rolls[i] }}</td>
+                <td>{{ times[i] }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </table>
+        {% endif %}
+    </div>
+    </div>
+    <div class="emaildata">
+
+        <h3>Send Today's Attendance Data Through The Email</h3>
+        <form action="/send_email" method="post">
+            <input type="email" name="email_to" id="email_to" placeholder="Enter your email id here">
+            <button type="submit">Send</button>
+        </form>
+
+    </div>
+</body>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }</script>
+</body>
+</script>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System </title>
+    <link rel="stylesheet" href="/static/css/home12.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/js/script.js"></script>
+</head>
+
+<body>
+    <div class="blue">
+    <div class="parent">
+        <div class="topnav" id="myTopnav">
+        
+        <h3>FaceAttend Pro</h3>
+        <a>{{username}}</a>
+        
+        <a id = "output4" herf="#output">Face data</a>
+        <a href="#contact">Contact</a>
+        <a href="#white">About</a>
+        
+        <a  id = "check" href="#home">Home</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            &#9776;
+            <i class="fa fa-home"></i>
+        </a>
+
+        </div>
+
+    <div class="Text">
+        <h1>Attendance Management System<br>
+            Using Face-Detection
+        </h1>
+        <h3>
+            Connect, collaborate, and get more<br> done together with Attendance's reliable <br>Face Detection solution.
+        </h3>
+        <button>
+            <a href="#">Attendance</a>
+        </button>
+        <a id="Texta"href="#">Request</a>
+    </div>
+    <div class="image">
+        <img width="400px" height="400px" src="/static/images/img1.svg" >
+    </div>
+    </div>
+ 
+    <p id = "output"></p>
+    
+
+    </div>
+    <div class="row text-center" style="padding: 20px;margin: 20px;">
+        <div class="col">
+            <h2>Today's Attendance Assignment</h2>
+            <table style="background-color: #3fb1fe;">
+                    {%if livedata %}
+                    <th>DATE</th>
+                    <th>SUBJECT NAME</th>
+                    <th>LINK</th>
+                    {% for i in livedata %}
+                    <tr>
+                        <td>{{i[0]}}</td>
+                        <td>{{i[1]}}</td>
+                         <!-- <td>{{i[2]}}</td>  -->
+                        <td><button class = "show-div" style=" color:#003b95 ;
+                            background-color: #003b95;
+                           
+                            border-radius: 999px;
+                            cursor: pointer;
+                            background: #f8f8f8;
+                            display: flex;
+                            transition: .3s;
+                            justify-content: center;
+                            margin-left: 30%;">Give Attendance></button></td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                
+            </table>
+        </div>
+    </div>
+    </div>
+    <div class="realtime">
+        <div class="realtimeimg">
+            <img src="/static/images/side1.svg" height="300px" width="400px" >
+        </div>
+        <div class="realtimetext">
+            <div class="realtimetext1">
+            <h1>Real-time Tracking</h1>
+            <ul style="padding-left: 20xp; list-style: none;">
+                <li>
+                <span class="checkbox"></span>
+                <p>Instance Update</p>
+                </li>
+                <li>
+                <span class="checkbox"></span>
+                <p>Esay editing</p>
+                </li>
+                <li>
+                <span class="checkbox"></span>
+                <p>Automatic Calculation </p>
+                </li>
+                
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="pie">
+        <div id="pietext">
+            <h2>
+                Here Is The Pie Chart Of Your Attendance Calculation
+            </h2>
+            <h3>
+                We Introduce The Brand New Feature<br>The Esaiest Way To Manage Your<br> All Subject's Attendance Ratio.
+            </h3>
+        </div>
+        <div class="drawing">
+            <canvas id="myChart"></canvas>
+            </div>
+       
+        
+    </div>
+    <div class="white" id="white">
+        
+        
+        <h1>
+            Simplified Face Detection and<br> Usable across any device
+
+        </h2>
+        <div class="row-1">
+            <div class="row-1-b">
+                <div class="boxicon">
+                    <img src="/static/images/icon-frame.svg" alt="">
+                </div>
+                <h4>Update Attendance On daily Bases</h4>
+                <p>Enable quick adoption with virtual meeting capabilities that make it easy to start, join, collaborate, and schedule meetings across any device.</p>
+            </div>
+            
+            <div class="row-1-b">
+                <div class="boxicon">
+                    <img src="/static/images/icon-frame-1.svg" alt="">
+                </div>
+                <h4>Easy To Use In Desktop & Mobile </h4>
+                <p>Enable quick adoption with virtual meeting capabilities that make it easy to start, join, collaborate, and schedule meetings across any device.</p>
+
+            </div>
+            <div class="row-1-b">
+                <div class="boxicon">
+                    <img src="/static/images/secure-logo.svg" alt="">
+                </div>
+                <h4>Secure & Anti-Proxy </h4>
+                <p>Enable quick adoption with virtual meeting capabilities that make it easy to start, join, collaborate, and schedule meetings across any device.</p>
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="work" id="work">
+        
+        <h3>This Web App is Build For Solving The Real World Attendance Management<br> Problem Which Is Time Consuming For Any Teacher </h3>
+        <h1>How's It Works?</h1>
+
+            <ul style="padding-left: 100px; list-style: none;">
+                <li>
+                <span class="checkbox"></span>
+                <p>Make Sure You Are Login Correctly With Email OR Username</p>
+                </li>
+                <li>
+                <span class="checkbox"></span>
+                <p>Click On Face Data On Navbar & It will Took 20 Pictures For Training The ML Model</p>
+                </li>
+                <li>
+                <span class="checkbox"></span>
+                <p>In Today Assignment You Will Get All Your Subject Wise Attendance Data  </p>
+                </li>
+                <li>
+                <span class="checkbox"></span>
+                <p>If You Are Admin Or Faculty Who Want To Generate Attendance Then  <a href="/admin">Click Here</a></p>
+                </li>
+            </ul>
+    </div>
+    
+    <div class="footer">
+
+        <div class="foot1">
+            <h3>Our Contact</h3>
+            <h3>Pradeep Saini</h3>
+            <h4>JECRC University Campus<br>
+            Plot No.IS-2036 to 2039,<br> Ramchandrapura Industrial Area, Vidhani,<br> Sitapura Extension, Jaipur – 303905 Rajasthan, India</h4>
+            
+        </div>
+        <div class="foot2">
+            <h3>
+                Links
+            </h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#white">About Us</a></li>
+                <li><a href="#work">Work </a></li>
+                <li><a href="#Contact">Contact Us</a></li>
+                <li><a href="#pie">Pie Chart</a></li>
+                <li><a href="#Footer">Footer</a></li>
+            </ul>
+        </div>
+        <div class="foot3">
+            <h1>Any Query & Raise Issue</h1>
+            <form action="/issue". method="post">
+                <input type="email" name="email" id="email" placeholder="Enter Your Email">
+                <br>
+                <textarea name="comment" id="message" cols="3" rows="5" placeholder="Enter your message…" title="Please enter your message (at least 10 characters)"></textarea>
+                <br>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+
+        <script>
+            function ShowDiv() {
+                document.getElementById("face-cam").style.display = "";
+            }
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                    // document.getElementsByTagName('h3').display='none';
+                } else {
+                    x.className = "topnav";
+
+                }
+                // document.getElementsByTagName('h3').style.display="None";
+            }</script>
+</body>
+<script>
+    document.getElementById("output4").addEventListener("click",function(){
+        document.getElementById('output').innerHTML = '<div id = "my-div" style="justify-content: center; display: block; margin-top: -449px;"><img id="img-div" src="{{ url_for("face") }}"></div><br><button id="output6" type="submit">Submit Face Data</button>'
+        document.getElementById("output6").addEventListener("click",function(){
+        document.getElementById('output6').innerHTML = '<img  src="{{ url_for("train") }}" alt="wait..."/>'
+        
+        setTimeout(() => {  location.reload(); }, 3000);
+       
+        // 
+
+      
+    })
+    })
+    var elements= document.getElementsByClassName("show-div")
+    for(var i = 0; i < elements.length; i++){
+        elements[i].addEventListener("click",function(){
+        document.getElementById('output').innerHTML = '<div id = "my-div" ><img id="img-div" src="{{ url_for("validation") }}"></div><br><button id = "output1">Close </button>'
+        document.getElementById("output1").addEventListener("click",function(){
+        // document.getElementById('output').innerHTML = 'Close'
+        location.reload();
+        alert("Attendance Marked Successfully")
+      
+    })
+    })}
+    
+ </script>
+ <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['DBMS', 'PYTHON', 'JAVA'],
+        datasets: [{
+            data: [12, 19,4],
+            backgroundColor: [
+                '#34a853',
+                '#fabb05',
+                '#e94235'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+
+ </script>
+</html>

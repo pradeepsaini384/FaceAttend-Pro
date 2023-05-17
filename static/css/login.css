@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",
+        sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #f0faff; */
+    /* background-image: url('/static/images/login.png'); */
+    /* background-image: linear-gradient(#c1c5eb,#ECECDf,#4fa9dd);  */
+    /* background-image: linear-gradient(#ECECDf,#4fa9dd);  */
+    background-color: #003b95;
+    color: white;
+}
+.welcome{
+    color: white;
+    
+}
+.wrapper {
+    margin-top: -40px;
+    position: relative;
+    max-width: 470px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 20px 30px 120px;
+    background: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    right: 30px;
+}
+
+
+.wrapper form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+form input {
+    height: 60px;
+    outline: none;
+    border: none;
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #003b95;
+    border-radius: 8px;
+    background: white;
+}
+
+
+
+form .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox input[type="checkbox"] {
+    height: 16px;
+    width: 16px;
+    accent-color: white;
+    cursor: pointer;
+}
+
+form .checkbox label {
+    cursor: pointer;
+    color: #003b95;
+}
+
+form a {
+    color: #003b95;
+    text-decoration: none;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+form input[type="submit"] {
+    margin-top: 15px;
+    padding: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+    background-color: #003b95;
+}
+
+.form header {
+    font-size: 30px;
+    text-align: center;
+    color: #003b95;
+    font-weight: 600;
+    cursor: pointer;
+}
+h1{
+    padding-top: 200px;
+    
+    text-align: center;
+    font-size: 35px;
+    color: white;
+
+    font-weight: bold;
+    /* background-color: #f8d2d8; */
+    border-radius: 10px;
+    position: relative;
+    margin-right: 40px;
+}
+@media (max-width: 830px) {
+.welcome {
+  display: none;
+}
+}
+#error{
+color: red;
+}
+#forgot{
+margin-left: 0;
+margin-right: auto;
+}
+#Register{
+margin-left: auto;
+margin-right: 0;
+}
+#forReg{
+display: flex;
+}
+
+.work{
+    
+    width: 100%;
+    height: 400px;
+    color:white;
+    
+
+}
+#workh1{
+    text-align: left;
+    padding: 30px 0px 0px 55px ;
+}
+.work h3{
+    padding: 70px 0px 0px 30px ;
+    font-size:30px ;
+}
+.checkbox{
+    float: left;
+    background:url('/static/images/icon-green-check-copy.svg') center left no-repeat; ;
+    height: 22px;
+    width: 23px;
+    margin-right: 12px;
+    display: inline-block;
+    
+  
+  
+}
+.work li{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup Form</title>
+    <link rel="stylesheet" href="/static/css/login.css" />
+
+</head>
+
+<body>
+    <h1 style="padding: 0;"><div class = "welcome" >Welcome To Attendence Management System </div></h1>
+    <section class="wrapper">
+        
+        <div class="form signup">
+            <!-- <h3>Welcome To Attendence Management System</h3> -->
+            <header>Admin Log In</header>
+            <form action='/adminlog' method= "post">
+                {% if f %}
+                <p id="error">Email Or Password Maybe incorrect!!</p>{% endif %}
+                <input type="text" placeholder="Email address" id="email"  name = "email"  required />
+                <input type="password" placeholder="Password" id="password" name = "password" required />
+                <a href="#">Forgot password?</a>
+                <input type="submit" value="login" />
+            </form>
+        </div>
+
+    </section>
+</body>
+
+</html>

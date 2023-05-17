@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup Form</title>
+    <link rel="stylesheet" href="/static/css/login.css" />
+    <style>
+        /* Import Google font - Poppins */
+       
+    </style>
+</head>
+
+<body>
+    <div class = "welcome" ><h1>Welcome To Attendence Management System </h1>
+        <div class="work" id="work">
+        
+            <!-- <h3>This Web App is Build For Solving The Real World Attendance Management Problem Which Is Time Consuming For Any Teacher </h3> -->
+            <h1 id="workh1">How's It Works?</h1>
+    
+                <ul style="padding-left: 55px; padding-top: 10px; list-style: none;">
+                    <li>
+                    <span class="checkbox"></span>
+                    <p>Make Sure You Are Login Correctly With Email OR Username</p>
+                    </li>
+                    <li>
+                    <span class="checkbox"></span>
+                    <p>Click On Face Data On Navbar & It will Took 20 Pictures For Training The ML Model</p>
+                    </li>
+                    <li>
+                    <span class="checkbox"></span>
+                    <p>In Today Assignment You Will Get All Your Subject Wise Attendance Data  </p>
+                    </li>
+                    <li>
+                    <span class="checkbox"></span>
+                    <p>If You Are Admin Or Faculty Who Want To Generate Attendance Then  <a href="/admin">Click Here</a></p>
+                    </li>
+                </ul>
+        </div></div>
+    
+    <section class="wrapper">
+        
+        <div class="form signup">
+            <!-- <h3>Welcome To Attendence Management System</h3> -->
+            <header>Log In</header>
+            <form action='/validation' method= "post">
+                {% if f %}
+                <p id="error">Email Or Password Maybe incorrect!!</p>{% endif %}
+                <input type="text" placeholder="Email address" id="email"  name = "email"  required />
+                <input type="password" placeholder="Password" id="password" name = "password" required />
+                <div id="forReg"><a id ="forgot" href="#">Forgot password?</a>
+                <a id ="Register" href="register">Not Register Yet! Click Here</a></div>
+                <input type="submit" value="login" />
+            </form>
+        </div>
+
+    </section>
+</body>
+
+</html>

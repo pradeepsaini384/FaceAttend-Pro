@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup Form</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins",
+                sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #003b95;
+        }
+
+        .wrapper {
+            position: relative;
+            max-width: 470px;
+            width: 100%;
+            border-radius: 12px;
+            padding: 20px 30px 120px;
+            background: white;
+            box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+            overflow: hidden;
+            right: 30px;
+        }
+
+
+
+        .wrapper form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        form input {
+            height: 60px;
+            outline: none;
+            border: none;
+            padding: 0 15px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #333;
+            border-radius: 8px;
+            background: #fff;
+            border-color: black;
+        }
+
+
+
+        form .checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox input[type="checkbox"] {
+            height: 16px;
+            width: 16px;
+            accent-color: black;
+            cursor: pointer;
+        }
+
+        form .checkbox label {
+            cursor: pointer;
+            color: black;
+        }
+
+        form a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        form a:hover {
+            text-decoration: underline;
+        }
+
+        form input[type="submit"] {
+            margin-top: 15px;
+            padding: none;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .form header {
+            font-size: 30px;
+            text-align: center;
+            color: black;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        h1{
+            text-align: center;
+            font-size: 35px;
+            color: black;
+            font-weight: bold;
+            /* background-color: #f8d2d8; */
+            border-radius: 10px;
+            position: relative;
+            margin-right: 40px;
+        }
+        @media (max-width: 830px) {
+        .welcome {
+          display: none;
+        }}
+    </style>
+</head>
+
+<body>
+    <h1><div class = "welcome" style="color: white;" >Welcome To Attendence Management System </div></h1>
+    <section class="wrapper">
+        <div class="form signup">
+            <header>Signup</header>
+            <form action="/signup" method="post">
+                {% if done %}
+                <p id="error">Registered SuccessFully</p>{% endif %}
+                {% if error %}
+                <p id="error">Something Went Wrong</p>{% endif %}
+                <input type="text" id = "name"  name = "name" placeholder="Full name" required />
+                <input type="text" id="rollno"  name = "rollno" placeholder="Roll no" required />
+                <input type="text" id="email"  name = "email" placeholder="Email address" required />
+                <input type="password" id="password"  name = "password" placeholder="Password" required />
+                <div class="checkbox">
+                    <input type="checkbox" id="signupCheck" />
+                    <label for="signupCheck">I accept all terms & conditions</label>
+                </div>
+                <input style="background-color: #003b95; color: white;" type="submit" value="Signup" />
+            </form>
+        </div>
+
+    </section>
+</body>
+
+</html>
