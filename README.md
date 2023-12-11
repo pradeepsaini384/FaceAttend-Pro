@@ -14,7 +14,7 @@ This project is made in Python framework Flask . it is a live Web application wh
 ## Screenshots
 
 
-![App Screenshot](https://i.ibb.co/5Gvbksx/Screenshot-2023-05-18-002943.png)
+![App Screenshot](https://ibb.co/dK8bbX5)
 
                     Admin Dashboard
 ![App Screenshot](https://i.ibb.co/xhnQjcP/Web-capture-18-5-2023-0232-127-0-0-1.jpg)
